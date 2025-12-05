@@ -1,0 +1,110 @@
+.form {
+  max-width: 600px;
+}
+
+.formGroup {
+  margin-bottom: 20px;
+}
+
+.label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: #0B0B0B;
+  margin-bottom: 8px;
+}
+
+.required {
+  color: #EF4444;
+  margin-left: 4px;
+}
+
+.input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #0B0B0B;
+  
+  &:focus {
+    outline: none;
+    border-color: #007AFF;
+  }
+  
+  &.error {
+    border-color: #EF4444;
+  }
+}
+
+.select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #0B0B0B;
+  background: white;
+  
+  &:focus {
+    outline: none;
+    border-color: #007AFF;
+  }
+  
+  &.error {
+    border-color: #EF4444;
+  }
+}
+
+.errorMessage {
+  display: block;
+  margin-top: 4px;
+  font-size: 12px;
+  color: #EF4444;
+}
+
+.buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.cancelButton {
+  padding: 12px 24px;
+  background: #F3F4F6;
+  color: #6B7280;
+  border: 1px solid #D1D5DB;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  
+  &:hover:not(:disabled) {
+    background: #E5E7EB;
+  }
+  
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.submitButton {
+  padding: 12px 24px;
+  background: #007AFF;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  
+  &:hover:not(:disabled) {
+    background: #0056CC;
+  }
+  
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}

@@ -1,25 +1,38 @@
+
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import SideMenu from './components/SideMenu/SideMenu';
+import styles from './App.module.scss';
+import Header from './components/Header/Header';
+import Total from './components/Total/Total';
+import CustomersTable from './components/CustomersTable/CustomersTable';
+import EditCustomerPage from './pages/EditCustomerPage/EditCustomerPage';
+import { CustomersProvider } from './context';
+import HookForm from './components/HookForm/HookForm';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <CustomersProvider>
+    <Router>
+    <div className={styles.app}>
+      <SideMenu />
+      <main className={styles.appMain}>
+        <Header />
+        <Total />
+        <div className={styles.appContent}>
+          <h1>CRM Dashboard</h1>
+             <Routes>
+               <Route path="/" element={<CustomersTable />} />
+               <Route path="/customer/:id/edit" element={<EditCustomerPage />} />
+             </Routes>
+           {/* <CustomersTable /> */}
+          {/* Здесь будет основной контент */}
+        </div>
+      </main>
     </div>
+    </Router>
+    </CustomersProvider>
   );
 }
 

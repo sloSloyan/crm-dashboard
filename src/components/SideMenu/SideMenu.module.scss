@@ -1,0 +1,165 @@
+.sideMenu {
+  width: 280px;
+  height: 100vh;
+  background: white;
+  padding: 24px 0;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  top: 0;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.sideMenuHeader {
+  padding: 0 24px 32px;
+  margin-bottom: 24px;
+}
+
+.sideMenuLogo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.sideMenuLogoIcon {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, #7B61FF 0%, #AA82FF 100%);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+  color: white;
+  font-weight: bold;
+}
+
+.sideMenuLogo h2 {
+  color: #0B0B0B;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.sideMenuVersion {
+  color: #6B7280;
+  font-size: 12px;
+  padding-left: 44px;
+}
+
+.sideMenuNav {
+  flex: 1;
+  padding: 0 16px;
+}
+
+.sideMenuList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sideMenuItem {
+  margin-bottom: 4px;
+}
+
+.sideMenuItemActive {
+  .sideMenuLink {
+    background: rgba(0, 122, 255, 0.1);
+    color: #007AFF;
+  }
+}
+
+.sideMenuLink {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  color: #6B7280;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: #F9FAFB;
+    color: #0B0B0B;
+    cursor: pointer;
+  }
+}
+
+.sideMenuLabel {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.footer {
+      height: 300px;
+  padding: 16px 24px 0;
+  border-top: 1px solid #E5E7EB;
+  margin-top: auto;
+}
+
+.sideMenuProfile {
+
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+}
+
+.menuItem {
+    // display: flex;
+    // align-items: center;
+}
+
+.upgrade {
+    background: linear-gradient(45deg, #EAABF0, transparent);
+    border-radius: 20px;
+    padding: 15px 20px;
+    margin-bottom: 40px;
+
+    .text {
+        margin-bottom: 20px;
+    text-align: center;
+    font-weight: 600;
+    }
+
+    .btn {
+        color: #4925E9;
+        font-weight: 600;
+        background: #fff;
+        padding: 15px;
+        border-radius: 20px;
+        text-align: center;
+        cursor: pointer;
+    }
+}
+
+.sideMenuAvatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 12px;
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background: #f0f0f0;
+  }
+}
+
+.sideMenuUserInfo {
+  flex: 1;
+}
+
+.sideMenuUserName {
+  font-weight: 600;
+  font-size: 14px;
+  color: #0B0B0B;
+}
+
+.sideMenuUserRole {
+  font-size: 12px;
+  color: #6B7280;
+}

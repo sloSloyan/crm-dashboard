@@ -1,0 +1,38 @@
+.inputContainer {
+  position: relative;
+  width: 100%;
+}
+
+.input {
+//   width: 100%;
+  padding: 10px 16px;
+  border: 1px solid #F3F3F3;
+  border-radius: 10px;
+  background: #F9FAFB;
+  font-size: 12px;
+  color: #292D32;
+  
+  &::placeholder {
+    color: #B5B7C0;
+  }
+  
+  &:focus {
+    outline: none;
+    border-color: #007AFF;
+  }
+}
+
+.inputWithIcon {
+  padding-left: 40px !important;
+}
+
+.searchIcon {
+        position: absolute;
+    top: 8px;
+    left: 10px;
+    img {
+         width: 20px;
+         cursor: pointer;
+    }
+   
+}

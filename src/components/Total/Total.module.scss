@@ -1,0 +1,117 @@
+.block {
+    height: 120px;
+    background-color: #fff;
+    margin-bottom: 40px;
+    border-radius: 16px;
+    padding: 30px 50px;
+    display: flex;
+    align-items: center;
+}
+
+.total {
+    display: flex;
+    border-right: 2px solid #F0F0F0;
+    padding-right: 55px;
+    margin-right: 55px;
+}
+
+.totalImg {
+    margin-right: 20px;
+    img {
+        width: 80px;
+    }
+}
+
+.totalContent {
+
+    div {
+        margin-bottom: 5px;
+    }
+}
+
+.title {
+    color: #ACACAC;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.number {
+    font-size: 32px;
+    font-weight: 600;
+
+}
+
+.info {
+    color: #292D32;
+
+    span{
+        color: green;
+        font-weight: bold;
+    }
+}
+
+.members {
+     display: flex;
+    border-right: 2px solid #F0F0F0;
+    padding-right: 55px;
+    margin-right: 55px;
+}
+
+.membersImg {
+      margin-right: 20px;
+    img {
+        width: 80px;
+    }
+}
+
+.membersContent {
+
+    div {
+        margin-bottom: 5px;
+    }
+}
+
+.active {
+        display: flex;
+}
+
+.activeImg {
+        margin-right: 20px;
+    img {
+        width: 80px;
+    }
+}
+
+.activeContent {
+
+    div {
+        margin-bottom: 0;
+    }
+}
+
+.activeInfo {
+    display: flex;
+    position: relative;
+
+     div:nth-child(1) {
+        img {
+            width: 30px;
+        }
+    }
+
+    div:nth-child(2) {
+        position: absolute;
+        left: 18px;
+        img {
+            width: 30px;
+        }
+    }
+
+    div:nth-child(3) {
+        position: absolute;
+        left: 37px;
+        img {
+            width: 30px;
+        }
+    }
+}
