@@ -108,3 +108,22 @@
     cursor: not-allowed;
   }
 }
+
+.error {
+  color: #dc3545;
+  font-size: 14px;
+  margin-top: 4px;
+  display: block;
+}
+
+.input {
+  border: 1px solid #ccc;
+  
+  &:focus {
+    border-color: #007bff;
+  }
+  
+  &.hasError {
+    border-color: #dc3545;
+  }
+}

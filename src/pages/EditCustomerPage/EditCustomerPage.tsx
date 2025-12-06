@@ -6,6 +6,7 @@ import { useCustomers } from '../../context';
 import Form from '../../components/Form/Form';
 import { FormField } from '../../components/Form';
 import HookForm from '../../components/HookForm/HookForm';
+import { CustomerFormData } from '../../schemas/customerSchema';
 
 const EditCustomerPage: React.FC = () => {
   const { id } = useParams<{ id: string }>(); // Получаем ID из URL
@@ -85,13 +86,13 @@ const EditCustomerPage: React.FC = () => {
     console.log(formData)
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleSubmit = (data: CustomerFormData) => {
+    // e.preventDefault();
     
     if (!id) return;
     
     // Сохраняем изменения в контекст
-    updateCustomer(id, formData);
+    updateCustomer(id, data);
     
     alert('Customer updated successfully!');
     navigate('/'); // Возвращаемся на главную
@@ -153,6 +154,9 @@ const EditCustomerPage: React.FC = () => {
     },
   ];
 
+  if (!formData.customerName) {
+  return <div>Loading...</div>;
+}
   
   return (
     <div className={styles.editPage}>
@@ -261,7 +265,7 @@ const EditCustomerPage: React.FC = () => {
         </div>
       </form> */}
 
-      <Form
+      {/* <Form
         //   fields={formFields}
         initialData={initialData}
         onSubmit={handleSubmit}
@@ -269,14 +273,15 @@ const EditCustomerPage: React.FC = () => {
         isLoading={false}
         onChange={handleChange}
         value={formData}
-      />
+      /> */}
 
-      {/* <HookForm    
+      <HookForm    
+      key={formData.customerName}
         fields={formFields}
          value={formData}
-        initialData={initialData}
+        initialData={formData}
          onChange={handleChange}
-        onSubmit={handleSubmit} /> */}
+        onSubmit={handleSubmit} />
     </div>
   );
 };

@@ -2,6 +2,8 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { FormProps } from '../Form/index';
 import styles from '../Form/Form.module.scss';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { CustomerFormData, customerSchema } from '../../schemas/customerSchema';
 
 const HookForm: React.FC<FormProps> = ({
   fields,
@@ -18,8 +20,9 @@ const HookForm: React.FC<FormProps> = ({
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({
+  } = useForm<CustomerFormData>({
     defaultValues: initialData,
+    resolver: zodResolver(customerSchema)
   });
 
   console.log('fields = ', fields)
@@ -27,20 +30,36 @@ const HookForm: React.FC<FormProps> = ({
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
       {fields!.map((field) => {
+
+        const error = errors[field.name as keyof CustomerFormData];
         
         
         return (
-          <input
-                       type="text"
-                       id="customerName"
-                       value={value.label}
-                       className={styles.input}
-                       {...register('e-mail',{
-                            required: 'This field is required'
-                        })}
-                        onChange={() =>onChange}
-                        name="customerName"
-                     />
+        //   <input
+        //                type="text"
+        //                id="customerName"
+        //                value={value.label}
+        //                className={styles.input}
+        //                {...register('e-mail',{
+        //                     required: 'This field is required'
+        //                 })}
+        //                 onChange={() =>onChange}
+        //                 name="customerName"
+        //              />
+        <>
+         <input
+                type={field.type}
+                id={field.name}
+                className={styles.input}
+                placeholder={field.placeholder}
+                {...register(field.name as keyof CustomerFormData)}
+              />
+       {error && typeof error.message === 'string' && (
+  <span className={styles.error}>{error.message}</span>
+)}
+        </>
+         
+              
         );
       })}
       
@@ -59,7 +78,7 @@ const HookForm: React.FC<FormProps> = ({
           type="submit" 
           className={styles.submitButton}
           disabled={isLoading}
-          onClick={onSubmit}
+        //   onClick={onSubmit}
         >
           {isLoading ? 'Saving...' : submitText}
         </button>
