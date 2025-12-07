@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Customer } from '../../types/customer';
-import { customersData } from '../../data/customers';
+
 import styles from './CustomersTable.module.scss';
-import { Table } from '../Table/Table';
+
 import Input from '../Input/Input';
 import NewTable from '../NewTable/NewTable';
 import { useNavigate } from 'react-router-dom'; 
@@ -14,14 +13,6 @@ const CustomersTable: React.FC = () => {
 const [searchQuery, setSearchQuery] = useState<string>('');
   // Состояние для активного фильтра (что применено)
   const [activeFilter, setActiveFilter] = useState<string>('');
-  // Все клиенты (исходные данные)
-  // const [allCustomers] = useState<Customer[]>(customersData);
-
-  // Было
-  // const { customers } = useCustomers();
-  // const [allCustomers] = useState(customers);
-
-  // Стало
     // Берем customers из контекста
   const { customers } = useCustomers();
   
@@ -59,18 +50,6 @@ const [searchQuery, setSearchQuery] = useState<string>('');
     setActiveFilter('');
   };
 
-  // // Фильтруем данные только если есть activeFilter
-  // const filteredCustomers = activeFilter
-  //   ? allCustomers.filter(customer => {
-  //       const searchLower = activeFilter.toLowerCase();
-  //       return (
-  //         customer.customerName.toLowerCase().includes(searchLower) ||
-  //         customer.company.toLowerCase().includes(searchLower) ||
-  //         customer.email.toLowerCase().includes(searchLower) ||
-  //         customer.country.toLowerCase().includes(searchLower)
-  //       );
-  //     })
-  //   : allCustomers; // Если фильтр не применен - показываем всех
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(e.target.value);
@@ -159,36 +138,6 @@ const columns = [
           </div>
         </div>
       </div>
-
-      {/* Сама таблица */}
-      {/* <Table>
-        <thead className={styles.tableHead}>
-          <tr>
-            <th className={styles.th}>Customer Name</th>
-            <th className={styles.th}>Company</th>
-            <th className={styles.th}>Phone Number</th>
-            <th className={styles.th}>Email</th>
-            <th className={styles.th}>Country</th>
-            <th className={styles.th}>Status</th>
-          </tr>
-        </thead>
-        <tbody className={styles.tableBody}>
-          {filteredCustomers.map((customer) => (
-            <tr key={customer.id} className={styles.tr}>
-              <td className={styles.td}>{customer.customerName}</td>
-              <td className={styles.td}>{customer.company}</td>
-              <td className={styles.td}>{customer.phoneNumber}</td>
-              <td className={styles.td}>{customer.email}</td>
-              <td className={styles.td}>{customer.country}</td>
-              <td className={styles.td}>
-                <span className={`${styles.status} ${styles[customer.status.toLowerCase()]}`}>
-                  {customer.status}
-                </span>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </Table> */}
 
 
       <NewTable

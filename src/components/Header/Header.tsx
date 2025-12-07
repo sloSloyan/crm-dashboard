@@ -1,8 +1,5 @@
 import React from 'react';
-import { MenuItem } from '../../types';
 import styles from './Header.module.scss';
-import searchIcon from './icon/search.png'
-import arrowIcon from './icon/arrow.png'
 import Input from '../Input/Input';
 
 const Header: React.FC = () => {
@@ -16,7 +13,6 @@ const Header: React.FC = () => {
         </div>
           <div className={styles.search}>
       <div className={styles.searchIcon}>
-        {/* <img src={searchIcon} alt="" /> */}
       </div>
       <Input
         type="text" 
@@ -24,11 +20,6 @@ const Header: React.FC = () => {
         placeholder="Search..."
         search
       />
-      {/* <input 
-        type="text" 
-        className={styles.searchInput}
-        placeholder="Search..."
-      /> */}
     </div>
        
     </div>

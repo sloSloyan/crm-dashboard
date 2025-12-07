@@ -26,8 +26,6 @@ function App() {
                <Route path="/" element={<CustomersTable />} />
                <Route path="/customer/:id/edit" element={<EditCustomerPage />} />
              </Routes>
-           {/* <CustomersTable /> */}
-          {/* Здесь будет основной контент */}
         </div>
       </main>
     </div>
